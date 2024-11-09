@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cau7q3ibpvt8l" path="res://scenes/items/collectable.tscn" id="1_o8cuy"]
 [ext_resource type="Texture2D" uid="uid://cyjwk3v57r85" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/1.png" id="2_0syd3"]
 
-[node name="Buche" instance=ExtResource("1_o8cuy")]
-collectable_name = "Buche"
-collectable_description = "Une buche pour vous chauffer"
+[node name="Log" instance=ExtResource("1_o8cuy")]
+collectable_name = "Log"
+collectable_description = "A 	log for building or renovating structures."
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -8)

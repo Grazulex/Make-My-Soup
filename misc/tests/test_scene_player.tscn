@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct25ehmaqxmvq"]
+[gd_scene load_steps=6 format=3 uid="uid://ct25ehmaqxmvq"]
 
 [ext_resource type="PackedScene" uid="uid://cmcpm1uwyf5p2" path="res://scenes/characters/player.tscn" id="1_qou7w"]
 [ext_resource type="Texture2D" uid="uid://bsb2pb7c2acyi" path="res://assets/images/Exterior - Tiny Asset Pack/Fence Winter.png" id="2_t0u06"]
 [ext_resource type="Texture2D" uid="uid://cnwduqb6sltpf" path="res://assets/images/Farm - Tiny Asse Pack/Houses/Old/Initial house destroyed copiar.png" id="3_kfrbb"]
-[ext_resource type="PackedScene" uid="uid://d3t3ao43bdxx0" path="res://scenes/items/buche.tscn" id="6_hw6bb"]
+[ext_resource type="PackedScene" uid="uid://cdq15i84d3apa" path="res://scenes/items/gold.tscn" id="5_c0foc"]
+[ext_resource type="PackedScene" uid="uid://d3t3ao43bdxx0" path="res://scenes/items/log.tscn" id="6_hw6bb"]
 
 [node name="TestScenePlayer" type="Node2D"]
 
@@ -23,5 +24,8 @@ texture = ExtResource("3_kfrbb")
 
 [node name="Collectables" type="Node" parent="."]
 
-[node name="Buche" parent="Collectables" instance=ExtResource("6_hw6bb")]
-position = Vector2(19, 24)
+[node name="Log" parent="Collectables" instance=ExtResource("6_hw6bb")]
+position = Vector2(62, -23)
+
+[node name="Gold" parent="Collectables" instance=ExtResource("5_c0foc")]
+position = Vector2(116, 38)

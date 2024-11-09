@@ -14,6 +14,10 @@ config/name="MakeMySoup"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+InventoryManager="*res://scripts/global/inventory_manager.gd"
+
 [display]
 
 window/size/viewport_width=576

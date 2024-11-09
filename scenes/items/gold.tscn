@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdq15i84d3apa"]
+
+[ext_resource type="PackedScene" uid="uid://cau7q3ibpvt8l" path="res://scenes/items/collectable.tscn" id="1_2xig3"]
+[ext_resource type="Texture2D" uid="uid://b4cnvlxn5ifb7" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/3.png" id="2_e8iyc"]
+
+[node name="Gold" instance=ExtResource("1_2xig3")]
+collectable_name = "Gold"
+collectable_description = "Gold to buy seeds and other goods in the village."
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+texture = ExtResource("2_e8iyc")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -8)

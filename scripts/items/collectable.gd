@@ -22,6 +22,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if is_nearby and Input.is_action_just_pressed(action_key):
 		print("get: " + collectable_name)
+		InventoryManager.add_collectable(collectable_name)
 		queue_free()
 
 func _on_collect() -> void:

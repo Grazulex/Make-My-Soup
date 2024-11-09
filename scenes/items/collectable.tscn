@@ -18,3 +18,4 @@ shape = SubResource("RectangleShape2D_t4fe2")
 debug_color = Color(0, 0, 1, 0.419608)
 
 [node name="LabelCollectable" parent="." instance=ExtResource("2_rwgmy")]
+visible = false
