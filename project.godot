@@ -39,6 +39,7 @@ folder_colors={
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="NPC"
 2d_physics/layer_10="Plateform"
+2d_physics/layer_11="Items"
 
 [rendering]
 
