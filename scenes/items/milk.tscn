@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0cqc3fc055p1"]
+
+[ext_resource type="PackedScene" uid="uid://cau7q3ibpvt8l" path="res://scenes/items/collectable.tscn" id="1_um70o"]
+[ext_resource type="Texture2D" uid="uid://csjyfv52yrfum" path="res://assets/images/Icons  - Tiny Asset Pack/milk-n-grass-item-simple.png" id="2_lo63l"]
+
+[node name="Milk" instance=ExtResource("1_um70o")]
+collectable_name = "Milk"
+collectable_description = "Milk that gives you more energy."
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+texture = ExtResource("2_lo63l")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -8)
