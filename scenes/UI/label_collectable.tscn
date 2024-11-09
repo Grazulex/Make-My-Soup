@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://sjvdyatoyuf"]
+
+[ext_resource type="Texture2D" uid="uid://dlw875wih5s8" path="res://assets/images/UI/all.png" id="1_1ujsk"]
+[ext_resource type="Script" path="res://scripts/items/label_collectable.gd" id="1_cang7"]
+[ext_resource type="FontVariation" uid="uid://cgiabapfrtiyi" path="res://assets/fonts/zx_palm_variation.tres" id="3_i2mof"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_38637"]
+texture = ExtResource("1_1ujsk")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(80, 32, 48, 16)
+
+[node name="LabelCollectable" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cang7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 120.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_38637")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="LabelName" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.184314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i2mof")
+theme_override_font_sizes/font_size = 8
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDescription" type="Label" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.239216, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_i2mof")
+theme_override_font_sizes/font_size = 8
+text = "description"
+autowrap_mode = 2

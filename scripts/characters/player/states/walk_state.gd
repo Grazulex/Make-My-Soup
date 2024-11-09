@@ -4,8 +4,12 @@ extends NodeState
 @export var animation_player : AnimationPlayer
 @export var speed : int = 50
 
+var colliders_actif : Array[Collectable]
+
 func _on_process(_delta : float) -> void:
 	pass
+
+
 
 func _on_physics_process(_delta : float) -> void:
 	var direction = GameInputEvents.movement_input()
@@ -41,14 +45,24 @@ func _on_exit() -> void:
 	pass
 
 func checkDetection() -> void:
+	var detections_actif : bool = false
 	for detection_characters in player.detection_ray_cat:
 		if detection_characters.is_colliding():
+			detections_actif = true
 			detection_characters.enabled = false
 			var collider = detection_characters.get_collider()
+			colliders_actif.append(collider)
 			if (collider.is_in_group("collectable")):
-				collider.emit_signal("collect", collider)
+				collider.emit_signal("collect")
 			if (collider.is_in_group("enemy")):
-				collider.emit_signal("hurt", collider)
+				collider.emit_signal("hurt")
 			if (collider.is_in_group("npc")):
-				collider.emit_signal("hit", collider)				
-			detection_characters.enabled = true
+				collider.emit_signal("hit")				
+			detection_characters.enabled = true		
+	
+	if !detections_actif:
+		for collider in colliders_actif:
+			if is_instance_valid(collider):
+				if (collider.is_in_group("collectable")):
+					collider.emit_signal("exit")
+				colliders_actif.erase(collider)

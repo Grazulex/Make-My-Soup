@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cau7q3ibpvt8l"]
+
+[ext_resource type="Script" path="res://scripts/items/collectable.gd" id="1_gdm2q"]
+[ext_resource type="PackedScene" uid="uid://sjvdyatoyuf" path="res://scenes/UI/label_collectable.tscn" id="2_rwgmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4fe2"]
+size = Vector2(14, 16)
+
+[node name="Collectable" type="StaticBody2D"]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_gdm2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t4fe2")
+debug_color = Color(0, 0, 1, 0.419608)
+
+[node name="LabelCollectable" parent="." instance=ExtResource("2_rwgmy")]

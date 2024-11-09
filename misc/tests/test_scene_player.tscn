@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct25ehmaqxmvq"]
+[gd_scene load_steps=5 format=3 uid="uid://ct25ehmaqxmvq"]
 
 [ext_resource type="PackedScene" uid="uid://cmcpm1uwyf5p2" path="res://scenes/characters/player.tscn" id="1_qou7w"]
 [ext_resource type="Texture2D" uid="uid://bsb2pb7c2acyi" path="res://assets/images/Exterior - Tiny Asset Pack/Fence Winter.png" id="2_t0u06"]
 [ext_resource type="Texture2D" uid="uid://cnwduqb6sltpf" path="res://assets/images/Farm - Tiny Asse Pack/Houses/Old/Initial house destroyed copiar.png" id="3_kfrbb"]
-[ext_resource type="Texture2D" uid="uid://cyjwk3v57r85" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/1.png" id="4_6ydh4"]
-[ext_resource type="Script" path="res://misc/tests/buche.gd" id="4_kqo27"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k24xj"]
-size = Vector2(13, 13)
+[ext_resource type="PackedScene" uid="uid://d3t3ao43bdxx0" path="res://scenes/items/buche.tscn" id="6_hw6bb"]
 
 [node name="TestScenePlayer" type="Node2D"]
 
@@ -25,20 +21,7 @@ texture = ExtResource("2_t0u06")
 position = Vector2(176, -71)
 texture = ExtResource("3_kfrbb")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 1024
-collision_mask = 0
-script = ExtResource("4_kqo27")
-collectable_name = "Buche"
-collectable_description = "Buche pour se chauffer"
+[node name="Collectables" type="Node" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(47, -9)
-texture = ExtResource("4_6ydh4")
-hframes = 5
-vframes = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(47, -9)
-shape = SubResource("RectangleShape2D_k24xj")
-debug_color = Color(0, 0, 1, 0.419608)
+[node name="Buche" parent="Collectables" instance=ExtResource("6_hw6bb")]
+position = Vector2(19, 24)

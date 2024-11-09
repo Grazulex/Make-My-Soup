@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3t3ao43bdxx0"]
+
+[ext_resource type="PackedScene" uid="uid://cau7q3ibpvt8l" path="res://scenes/items/collectable.tscn" id="1_o8cuy"]
+[ext_resource type="Texture2D" uid="uid://cyjwk3v57r85" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/1.png" id="2_0syd3"]
+
+[node name="Buche" instance=ExtResource("1_o8cuy")]
+collectable_name = "Buche"
+collectable_description = "Une buche pour vous chauffer"
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+texture = ExtResource("2_0syd3")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -8)
