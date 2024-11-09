@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct25ehmaqxmvq"]
+
+[ext_resource type="PackedScene" uid="uid://cmcpm1uwyf5p2" path="res://scenes/characters/player.tscn" id="1_qou7w"]
+[ext_resource type="Texture2D" uid="uid://bsb2pb7c2acyi" path="res://assets/images/Exterior - Tiny Asset Pack/Fence Winter.png" id="2_t0u06"]
+[ext_resource type="Texture2D" uid="uid://cnwduqb6sltpf" path="res://assets/images/Farm - Tiny Asse Pack/Houses/Old/Initial house destroyed copiar.png" id="3_kfrbb"]
+
+[node name="TestScenePlayer" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_qou7w")]
+position = Vector2(-2, -11)
+speed = 50.0
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(1, -1)
+
+[node name="FenceWinter" type="Sprite2D" parent="."]
+position = Vector2(-62, -6)
+texture = ExtResource("2_t0u06")
+
+[node name="InitialHouseDestroyedCopiar" type="Sprite2D" parent="."]
+position = Vector2(176, -71)
+texture = ExtResource("3_kfrbb")

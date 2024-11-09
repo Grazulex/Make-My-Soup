@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# function for renaming directories recursively
+rendirrec () {
+    local from to
+    for from in *; do
+        [[ -d $from && ! -h $from ]] || continue
+        to=$(sed -E 's/([^A-Z])([A-Z])/\1-\2/g; s/.*/\L&/' <<< "$from")
+        cd "$from" && { rendirrec; cd ..; } || exit
+        [[ $to = "$from" ]] && continue
+        if [[ -e $to ]]; then
+            printf "'%s' already exists. Skipping..\n" "$to" >&2
+            continue;
+        fi
+        mv "$from" "$to" || exit
+    done
+}
+
+[[ -z $1 ]] && { echo "Missing argument"  >&2; exit 1; }
+cd "$1" && rendirrec
