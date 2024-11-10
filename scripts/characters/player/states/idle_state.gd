@@ -28,11 +28,12 @@ func _on_next_transitions() -> void:
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walking")
 		
-	if player.current_tool == DataTypes.Tools.AxeWood &&  GameInputEvents.use_tool():
+	if GameInputEvents.use_tool():
 		transition.emit("Axing")
 
 func _on_enter() -> void:
 	animation_player.stop()
+	player.current_tool = DataTypes.Tools.None
 
 
 func _on_exit() -> void:

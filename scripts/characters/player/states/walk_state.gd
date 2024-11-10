@@ -4,12 +4,10 @@ extends NodeState
 @export var animation_player : AnimationPlayer
 @export var speed : int = 50
 
-var colliders_actif : Array[Collectable]
+var collider_actif
 
 func _on_process(_delta : float) -> void:
 	pass
-
-
 
 func _on_physics_process(_delta : float) -> void:
 	var direction = GameInputEvents.movement_input()
@@ -30,7 +28,7 @@ func _on_physics_process(_delta : float) -> void:
 		
 	player.velocity = direction * speed
 	player.move_and_slide()
-	checkDetection()
+	checkEnableDetection()
 
 func _on_next_transitions() -> void:
 	if !GameInputEvents.is_movement_input():
@@ -39,30 +37,32 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
-	pass
+	player.current_tool = DataTypes.Tools.None
 
 func _on_exit() -> void:
 	pass
 
-func checkDetection() -> void:
+func checkEnableDetection() -> void:
+	if player.current_tool != DataTypes.Tools.None:
+		return
 	var detections_actif : bool = false
 	for detection_characters in player.detection_ray_cat:
 		if detection_characters.is_colliding():
 			detections_actif = true
 			detection_characters.enabled = false
 			var collider = detection_characters.get_collider()
-			colliders_actif.append(collider)
+			if collider_actif != collider:
+				collider_actif = collider
 			if (collider.is_in_group("collectable")):
 				collider.emit_signal("collect")
-			if (collider.is_in_group("enemy")):
-				collider.emit_signal("hurt")
 			if (collider.is_in_group("npc")):
 				collider.emit_signal("hit")				
 			detection_characters.enabled = true		
-	
 	if !detections_actif:
-		for collider in colliders_actif:
-			if is_instance_valid(collider):
-				if (collider.is_in_group("collectable")):
-					collider.emit_signal("exit")
-				colliders_actif.erase(collider)
+		if collider_actif != null:
+			if is_instance_valid(collider_actif):
+				if (collider_actif.is_in_group("collectable")):
+					collider_actif.emit_signal("exit")
+				if (collider_actif.is_in_group("npc")):
+					collider_actif.emit_signal("exit")				
+				collider_actif = null

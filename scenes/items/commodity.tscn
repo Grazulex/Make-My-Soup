@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dccf45qs6ea1n"]
+
+[ext_resource type="Script" path="res://scripts/items/commodity.gd" id="1_omp8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx5xq"]
+size = Vector2(17, 17)
+
+[node name="Commodity" type="StaticBody2D"]
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource("1_omp8w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nx5xq")
+debug_color = Color(0, 0, 1, 0.419608)

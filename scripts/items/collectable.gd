@@ -10,8 +10,8 @@ class_name Collectable
 signal collect()
 signal exit()
 
-var action_key = "get" 
-var is_nearby = false
+var action_key : String = "get" 
+var is_nearby : bool = false
 
 func _ready() -> void:
 	add_to_group("collectable")
