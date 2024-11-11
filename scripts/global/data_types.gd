@@ -3,6 +3,7 @@ class_name DataTypes
 enum Tools {
 	None,
 	AxeWood,
+	PickStone,
 	TillGround,
 	WaterCrops,
 	PlantCorn,

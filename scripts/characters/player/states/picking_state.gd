@@ -18,21 +18,21 @@ func _on_next_transitions() -> void:
 
 func _on_enter() -> void:
 	if player.direction == Vector2.UP:
-		animation_player.play("axe_back")
+		animation_player.play("pick_back")
 	elif player.direction == Vector2.RIGHT:
-		animation_player.play("axe_right")
+		animation_player.play("pick_right")
 	elif player.direction == Vector2.DOWN:
-		animation_player.play("axe_front")
+		animation_player.play("pick_front")
 	elif player.direction == Vector2.LEFT:
-		animation_player.play("axe_left")
+		animation_player.play("pick_left")
 	else:
-		animation_player.play("axe_front")
+		animation_player.play("pick_front")
 
 func _on_exit() -> void:
 	animation_player.stop()
 
 func checkEnableDetection() -> void:
-	if ToolManager.selected_tool != DataTypes.Tools.AxeWood:
+	if ToolManager.selected_tool != DataTypes.Tools.PickStone:
 		return
 	var detections_actif : bool = false
 	for detection_characters in player.detection_ray_cat:

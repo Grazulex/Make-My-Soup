@@ -14,6 +14,7 @@ material_name = "Tree"
 material_description = "Cut down this tree to gather wood."
 scene_path = "res://scenes/items/log.tscn"
 parent_node = "Collectables"
+action_tool = 1
 
 [node name="Sprite2D" parent="." index="0"]
 material = SubResource("ShaderMaterial_wff5x")

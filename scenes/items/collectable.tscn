@@ -19,3 +19,6 @@ debug_color = Color(0, 0, 1, 0.419608)
 
 [node name="LabelCollectable" parent="." instance=ExtResource("2_rwgmy")]
 visible = false
+
+[connection signal="collect" from="." to="LabelCollectable" method="_on_collectable_collect"]
+[connection signal="exit" from="." to="LabelCollectable" method="_on_collectable_exit"]

@@ -37,13 +37,13 @@ func _on_next_transitions() -> void:
 
 
 func _on_enter() -> void:
-	player.current_tool = DataTypes.Tools.None
+	ToolManager.select_tool(DataTypes.Tools.None)
 
 func _on_exit() -> void:
 	pass
 
 func checkEnableDetection() -> void:
-	if player.current_tool != DataTypes.Tools.None:
+	if ToolManager.selected_tool != DataTypes.Tools.None:
 		return
 	var detections_actif : bool = false
 	for detection_characters in player.detection_ray_cat:

@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://4h1dfvrcpp3s"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_ui.gd" id="1_gm56u"]
+[ext_resource type="Texture2D" uid="uid://nxij1y1prjj2" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/2.png" id="1_h8oyv"]
+[ext_resource type="Texture2D" uid="uid://csjyfv52yrfum" path="res://assets/images/Icons  - Tiny Asset Pack/milk-n-grass-item-simple.png" id="2_aw4rp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl8pq"]
+atlas = ExtResource("1_h8oyv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g6iy"]
+atlas = ExtResource("1_h8oyv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd8l0"]
+atlas = ExtResource("2_aw4rp")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Inventory_UI" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gm56u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Logs" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Logs"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_wl8pq")
+
+[node name="LogLabel" type="Label" parent="MarginContainer/VBoxContainer/Logs"]
+layout_mode = 2
+text = "0"
+
+[node name="Stone" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Stone"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_1g6iy")
+
+[node name="StoneLabel" type="Label" parent="MarginContainer/VBoxContainer/Stone"]
+layout_mode = 2
+text = "0"
+
+[node name="Milk" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Milk"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_dd8l0")
+
+[node name="MilkLabel" type="Label" parent="MarginContainer/VBoxContainer/Milk"]
+layout_mode = 2
+text = "0"

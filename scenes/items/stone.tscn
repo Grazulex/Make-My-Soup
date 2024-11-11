@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw1vkqarlv226"]
+
+[ext_resource type="PackedScene" uid="uid://dccf45qs6ea1n" path="res://scenes/items/commodity.tscn" id="1_ndvvf"]
+[ext_resource type="Shader" path="res://scripts/shaders/shake.gdshader" id="2_sbrkt"]
+[ext_resource type="Texture2D" uid="uid://nxij1y1prjj2" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/2.png" id="3_m3d7x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vfvi"]
+shader = ExtResource("2_sbrkt")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wff5x"]
+shader = ExtResource("2_sbrkt")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[node name="Stone" instance=ExtResource("1_ndvvf")]
+material = SubResource("ShaderMaterial_5vfvi")
+material_name = "Stone"
+material_description = "Cut down this tree to gather wood."
+scene_path = "res://scenes/items/gold.tscn"
+parent_node = "Collectables"
+action_tool = 2
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_wff5x")
+position = Vector2(1, -5)
+texture = ExtResource("3_m3d7x")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, -5)
