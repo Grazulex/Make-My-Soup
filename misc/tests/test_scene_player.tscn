@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct25ehmaqxmvq"]
+[gd_scene load_steps=11 format=3 uid="uid://ct25ehmaqxmvq"]
 
 [ext_resource type="PackedScene" uid="uid://cmcpm1uwyf5p2" path="res://scenes/characters/player.tscn" id="1_qou7w"]
 [ext_resource type="Texture2D" uid="uid://bsb2pb7c2acyi" path="res://assets/images/Exterior - Tiny Asset Pack/Fence Winter.png" id="2_t0u06"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://clxrt1ca1x66e" path="res://scenes/items/tree.tscn" id="7_w26df"]
 [ext_resource type="PackedScene" uid="uid://dw1vkqarlv226" path="res://scenes/items/stone.tscn" id="8_f8yeo"]
 [ext_resource type="PackedScene" uid="uid://bsf8pkgxrw21" path="res://scenes/UI/game_screen.tscn" id="9_u3vy7"]
+[ext_resource type="PackedScene" uid="uid://cx1ieqfcm4bqj" path="res://scenes/items/egg.tscn" id="10_nhae4"]
 
 [node name="TestScenePlayer" type="Node2D"]
 
@@ -36,6 +37,9 @@ position = Vector2(116, 38)
 
 [node name="Milk" parent="Collectables" instance=ExtResource("6_y3rlw")]
 position = Vector2(23, 64)
+
+[node name="Egg" parent="Collectables" instance=ExtResource("10_nhae4")]
+position = Vector2(22, -62)
 
 [node name="Commodities" type="Node" parent="."]
 

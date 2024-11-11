@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx1ieqfcm4bqj"]
+
+[ext_resource type="PackedScene" uid="uid://cau7q3ibpvt8l" path="res://scenes/items/collectable.tscn" id="1_ygw0q"]
+[ext_resource type="Texture2D" uid="uid://bp388fwyn4lds" path="res://assets/images/Farm Animals- Tiny Asset Pack/Chicken/Baby Chicken Black.png" id="2_8156h"]
+
+[node name="Egg" instance=ExtResource("1_ygw0q")]
+collectable_point = 2
+collectable_name = "Egg"
+collectable_description = "Egg that gives you more energy."
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -8)
+texture = ExtResource("2_8156h")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -8)
