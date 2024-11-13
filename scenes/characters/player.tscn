@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cmcpm1uwyf5p2"]
+[gd_scene load_steps=35 format=3 uid="uid://cmcpm1uwyf5p2"]
 
 [ext_resource type="Script" path="res://scenes/characters/player.gd" id="1_b03f2"]
 [ext_resource type="Texture2D" uid="uid://d2jtm1i6w3jpg" path="res://assets/images/character_and_portrait/character/full/tori2/idle.png" id="1_enq6k"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/characters/player/states/walk_state.gd" id="5_vwkk0"]
 [ext_resource type="Script" path="res://scripts/characters/player/states/axing_state.gd" id="8_x0lp3"]
 [ext_resource type="Script" path="res://scripts/characters/player/states/picking_state.gd" id="10_jp23d"]
+[ext_resource type="Script" path="res://addons/jbs_health_node/jbs_health.gd" id="11_7gvsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c7glv"]
 size = Vector2(10, 6.5)
@@ -1368,6 +1369,13 @@ size = Vector2(8, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jy2a"]
 size = Vector2(5, 5)
 
+[sub_resource type="Gradient" id="Gradient_3ddc7"]
+colors = PackedColorArray(0, 1, 0, 0.784314, 1, 0, 0, 0.784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qtqod"]
+gradient = SubResource("Gradient_3ddc7")
+width = 15
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("detection_ray_cat")]
 collision_mask = 1542
 script = ExtResource("1_b03f2")
@@ -1450,5 +1458,26 @@ animation_player = NodePath("../../PlayerAnimation")
 script = ExtResource("10_jp23d")
 player = NodePath("../..")
 animation_player = NodePath("../../PlayerAnimation")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("texture_progress", "progress")]
+script = ExtResource("11_7gvsv")
+texture_progress = NodePath("../HealthProgressBar")
+progress = NodePath("")
+hide_in_seconds = 0.0
+behavior = 2
+change_percent = 0.05
+change_in_seconds = 5.0
+revivable = true
+emit_heal = true
+
+[node name="HealthProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -8.0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 36.0
+value = 100.0
+rounded = true
+fill_mode = 1
+texture_progress = SubResource("GradientTexture1D_qtqod")
 
 [node name="PlayerTimer" type="Timer" parent="."]

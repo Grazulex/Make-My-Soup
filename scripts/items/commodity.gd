@@ -7,6 +7,8 @@ class_name Commodity
 @export var quantity_hit_before_collectable : int = 3
 @export var material_name : String = ""
 @export_multiline var material_description : String = ""
+@export_category("Player")
+@export var player_healt : float = -2.5
 @export_category("Collectable")
 @export_file() var scene_path : String
 @export var parent_node : String
@@ -14,6 +16,7 @@ class_name Commodity
 
 signal gathered(tools : DataTypes.Tools)
 signal exit()
+signal player_action_healt(amount : float)
 
 var action_key: String = "attack" 
 var is_nearby : bool = false
@@ -29,6 +32,7 @@ func _process(_delta: float) -> void:
 	if is_nearby and Input.is_action_just_pressed(action_key):
 		if ToolManager.selected_tool == action_tool:
 			healt -= material_damage
+			player_action_healt.emit(player_healt)
 			sprite_2d.material.set_shader_parameter("shake_intensity", 2.0)
 			await get_tree().create_timer(1.0).timeout
 			sprite_2d.material.set_shader_parameter("shake_intensity", 0.0)

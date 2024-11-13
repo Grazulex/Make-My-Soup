@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 InventoryManager="*res://scripts/global/inventory_manager.gd"
 FunctionsManager="*res://scripts/global/functions_manager.gd"
 ToolManager="*res://scripts/global/tool_manager.gd"
+GlobalHealth="*res://addons/jbs_health_node/jbs_global_health.gd"
 
 [display]
 
@@ -27,6 +28,10 @@ window/size/viewport_height=324
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jbs_health_node/plugin.cfg")
 
 [file_customization]
 
@@ -56,6 +61,10 @@ release_tool={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/traduction.en.translation", "res://translations/traduction.fr.translation", "res://translations/traduction.nl.translation")
 
 [layer_names]
 

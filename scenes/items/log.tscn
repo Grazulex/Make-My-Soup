@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cyjwk3v57r85" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/1.png" id="2_0syd3"]
 
 [node name="Log" instance=ExtResource("1_o8cuy")]
-collectable_name = "Log"
-collectable_description = "A 	log for building or renovating structures."
+collectable_name = "LOG.NAME"
+collectable_description = "LOG.DESCRIPTION"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -8)

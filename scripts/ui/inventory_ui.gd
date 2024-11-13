@@ -13,11 +13,11 @@ func _ready() -> void:
 func on_inventory_changed() -> void:
 	var inventory : Dictionary = InventoryManager.inventory
 	
-	if inventory.has("Log"):
-		log_label.text = str(inventory["Log"])
+	if inventory.has("LOG.NAME"):
+		log_label.text = str(inventory["LOG.NAME"])
 
-	if inventory.has("Gold"):
-		stone_label.text = str(inventory["Gold"])
+	if inventory.has("GOLD.NAME"):
+		stone_label.text = str(inventory["GOLD.NAME"])
 		
 	if inventory.has("Milk"):
 		milk_label.text = str(inventory["Milk"])

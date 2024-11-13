@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b4cnvlxn5ifb7" path="res://assets/images/Icons  - Tiny Asset Pack/Icons 0.2/3.png" id="2_e8iyc"]
 
 [node name="Gold" instance=ExtResource("1_2xig3")]
-collectable_name = "Gold"
-collectable_description = "Gold to buy seeds and other goods in the village."
+collectable_name = "GOLD.NAME"
+collectable_description = "GOLD.DESCRIPTION"
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -8)
